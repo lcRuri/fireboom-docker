@@ -1,5 +1,5 @@
 # fireboom-docker
-构建docker镜像需要的最小的依赖
+此仓库是构建docker镜像需要的最小的依赖
 Docker部署
 当前Docker镜像支持开发模式dev和生产模式start。
 开发模式内置了golang和nodejs环境；
