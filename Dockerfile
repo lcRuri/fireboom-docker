@@ -27,7 +27,6 @@ VOLUME /dist/custom-go
 VOLUME /dist/custom-ts
 VOLUME /dist/exported
 
-EXPOSE 9123
 EXPOSE 9991
 
 ENTRYPOINT ["/dist/host.sh"]
