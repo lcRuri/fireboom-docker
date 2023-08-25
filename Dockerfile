@@ -8,7 +8,7 @@ RUN apk update && \
 # 安装 Node.js
 RUN apk add --no-cache nodejs npm
 
-WORKDIR /dist
+WORKDIR /fbserver
 
 # 将代码复制到容器中
 COPY . .
@@ -19,16 +19,16 @@ RUN chmod +x host.sh
 RUN chmod +x update-fb.sh
 
 # 指定挂载目录
-VOLUME /dist/log
-VOLUME /dist/store
-VOLUME /dist/template
-VOLUME /dist/upload
-VOLUME /dist/custom-go
-VOLUME /dist/custom-ts
-VOLUME /dist/exported
+VOLUME /fbserver/log
+VOLUME /fbserver/store
+VOLUME /fbserver/template
+VOLUME /fbserver/upload
+VOLUME /fbserver/custom-go
+VOLUME /fbserver/custom-ts
+
 
 
 EXPOSE 9123
 EXPOSE 9991
 
-ENTRYPOINT ["/dist/host.sh"]
+ENTRYPOINT ["/fbserver/host.sh"]
