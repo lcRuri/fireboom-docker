@@ -20,7 +20,6 @@ cd workspace
 docker run -it -v $(pwd)/store:/fbserver/store \
 		-v $(pwd)/upload:/fbserver/upload \
 		-v $(pwd)/template:/fbserver/template \
-		-v $(pwd)/exported:/fbserver/exported \
 		-v $(pwd)/custom-go:/fbserver/custom-go \
 		-v $(pwd)/custom-ts:/fbserver/custom-ts \
 		-p 9123:9123 -p 9991:9991 \
@@ -34,7 +33,7 @@ docker run -it -p 9123:9123 -p 9991:9991 fireboom_server:latest start
 
 容器的工作目录为：./fbserver，根据需求挂载下述子目录。
 
-存储目录： store、upload、exported
+存储目录： store、upload
 
 钩子目录：custom-go 或 custom-ts  （不用钩子，无需暴露）
 
