@@ -11,12 +11,12 @@ RUN apk add --no-cache nodejs npm
 WORKDIR /dist
 
 # 将代码复制到容器中
-
-COPY ./host.sh /dist
+COPY . .
 
 
 #RUN chmod +x update-fb.sh
 RUN chmod +x host.sh
+RUN chmod +x update-fb.sh
 
 # 指定挂载目录
 VOLUME /dist/log
@@ -26,6 +26,7 @@ VOLUME /dist/upload
 VOLUME /dist/custom-go
 VOLUME /dist/custom-ts
 VOLUME /dist/exported
+
 
 EXPOSE 9123
 EXPOSE 9991
